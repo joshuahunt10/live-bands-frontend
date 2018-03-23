@@ -1,5 +1,6 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
+import Box from './Box'
 
 storiesOf('Color Scheme', module)
-  .add('with text', () => <Button onClick={action('clicked')}>Hello Button</Button>)
+  .add('with text', () => <Box />)
