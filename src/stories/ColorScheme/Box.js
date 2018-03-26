@@ -7,11 +7,41 @@ const styles = theme => ({
   root: {
     flexGrow: 1,
   },
-  paper: {
+  paperMain: {
     padding: theme.spacing.unit * 2,
     textAlign: 'center',
-    color: theme.palette.text.secondary,
+    color: theme.palette.primary.contrastText,
     backgroundColor: theme.palette.primary.main,
+  },
+  paperLight: {
+    padding: theme.spacing.unit * 2,
+    textAlign: 'center',
+    color: theme.palette.primary.contrastText,
+    backgroundColor: theme.palette.primary.light,
+  },
+  paperDark: {
+    padding: theme.spacing.unit * 2,
+    textAlign: 'center',
+    color: theme.palette.primary.contrastText,
+    backgroundColor: theme.palette.primary.dark,
+  },
+  paperSecMain: {
+    padding: theme.spacing.unit * 2,
+    textAlign: 'center',
+    color: theme.palette.secondary.contrastText,
+    backgroundColor: theme.palette.secondary.main,
+  },
+  paperSecLight: {
+    padding: theme.spacing.unit * 2,
+    textAlign: 'center',
+    color: theme.palette.secondary.contrastText,
+    backgroundColor: theme.palette.secondary.light,
+  },
+  paperSecDark: {
+    padding: theme.spacing.unit * 2,
+    textAlign: 'center',
+    color: theme.palette.secondary.contrastText,
+    backgroundColor: theme.palette.secondary.dark,
   },
 })
 
@@ -21,26 +51,23 @@ class Box extends React.Component {
     return (
       <div className={classes.root}>
       <Grid container spacing={24}>
-        <Grid item xs={12}>
-          <Paper className={classes.paper}>xs=12</Paper>
+        <Grid item xs={12} sm={4}>
+          <Paper className={classes.paperMain}>Primary Main</Paper>
         </Grid>
-        <Grid item xs={12} sm={6}>
-          <Paper className={classes.paper}>xs=12 sm=6</Paper>
+        <Grid item xs={12} sm={4}>
+          <Paper className={classes.paperLight}>Primary Light </Paper>
         </Grid>
-        <Grid item xs={12} sm={6}>
-          <Paper className={classes.paper}>xs=12 sm=6</Paper>
+        <Grid item xs={12} sm={4}>
+          <Paper className={classes.paperDark}>Primary Dark</Paper>
         </Grid>
-        <Grid item xs={6} sm={3}>
-          <Paper className={classes.paper}>xs=6 sm=3</Paper>
+        <Grid item xs={6} sm={4}>
+          <Paper className={classes.paperSecMain}>Secondary Main</Paper>
         </Grid>
-        <Grid item xs={6} sm={3}>
-          <Paper className={classes.paper}>xs=6 sm=3</Paper>
+        <Grid item xs={6} sm={4}>
+          <Paper className={classes.paperSecLight}>Secondary Light</Paper>
         </Grid>
-        <Grid item xs={6} sm={3}>
-          <Paper className={classes.paper}>xs=6 sm=3</Paper>
-        </Grid>
-        <Grid item xs={6} sm={3}>
-          <Paper className={classes.paper}>xs=6 sm=3</Paper>
+        <Grid item xs={6} sm={4}>
+          <Paper className={classes.paperSecDark}>Secondary Dark</Paper>
         </Grid>
       </Grid>
     </div>
@@ -48,4 +75,4 @@ class Box extends React.Component {
   }
 }
 
-export default withStyles(styles)(Box)
+export default withStyles(styles, {withTheme: true})(Box)
